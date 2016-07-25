@@ -1,0 +1,126 @@
+資料名稱:鄉鎮行政區圖
+
+資料格式: ESRI shp ，先把shp.zip解壓縮，將產生多個檔案，可使用QGIS軟體開啟
+
+欄位說明:
+ D_NAME:縣市鄉鎮名(Taiwan_Geocode_100)
+ TOWN_NAME:鄉鎮名(Taiwan_Geocode_100)
+ nTOWN:鄉鎮行政區代碼(Taiwan_Geocode_100)
+ ENG_NAME:鄉鎮英文名(Taiwan_Geocode_100)
+ C_NAME103:縣市名(Taiwan_Geocode_103)
+ T_NAME103:鄉鎮名(Taiwan_Geocode_103)
+ D_NAME103:縣市鄉鎮名(Taiwan_Geocode_103)
+ nTown103:鄉鎮行政區代碼(Taiwan_Geocode_103)
+ E_NAME103:鄉鎮英文名(Taiwan_Geocode_103)
+
+其它說明:
+1. Taiwan_Geocode_100:地圖以內政部公告之全國村里界圖（台澎金馬），102/12/26版本為基礎，做0.001度座標簡化。
+2. Taiwan_Geocode_103:以Taiwan_Geocode_100地圖為基礎，依行政院主計處發布，103年12月25日生效版本，桃園縣更名桃園市之鄉鎮代碼修正。
+3. CAP之<area><geocode><valueName>會指明使用版本(例:Taiwan_Geocode_103)
+4. CAP之<area><geocode><value>使用行政區代碼
+
+
+資料提供:國家災害防救科技中心
+公告時間:103/12/19
+
+
+104/5/21 修正"臺灣省新竹縣峨嵋鄉" 為 "臺灣省新竹縣峨眉鄉"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+edit by cat
