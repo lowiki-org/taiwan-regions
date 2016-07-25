@@ -28,6 +28,9 @@ def run(verbose=True):
         Region, town_shp, mapping, transform=True, encoding="utf-8")
     lm.save(strict=True, verbose=verbose)
     for feat in ds[0]:
+        rg = Region.objects.get(slug=feat.get('nTOWN'))
+        rg.populate_region()
+
         rs = RegionSettings.objects.get(region__slug=feat.get('nTOWN'))
         rs.admins.add(*admins)
         rs.default_language = u'zh'
