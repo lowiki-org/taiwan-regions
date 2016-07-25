@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 town_shp = os.path.join(os.path.dirname(__file__),
                         'town-SHP/town_103cap_UTF8.shp')
 ds = DataSource(town_shp)
-admins = [User.objects.get(username=username) for username in ['pm5']]
+admins = [User.objects.get(username=username) for username in ['pm5', 'superbil', 'dongpo']]
 mapping = {
     'full_name': 'D_NAME103',
     'slug': 'nTOWN',
