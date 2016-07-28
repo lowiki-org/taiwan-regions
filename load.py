@@ -9,10 +9,18 @@ from django.contrib.auth.models import User
 town_shp = os.path.join(os.path.dirname(__file__),
                         'town-SHP/town_103cap_UTF8.shp')
 ds = DataSource(town_shp)
-admins = [User.objects.get(username=username) for username in ['pm5', 'superbil', 'dongpo']]
+
+admins = []
+for username in ['pm5', 'superbil', 'dongpo']:
+    try:
+        admin = User.objects.get(username=username)
+        admins.append(admin)
+    except User.DoesNotExist:
+        pass
+
 mapping = {
     'full_name': 'D_NAME103',
-    'slug': 'nTOWN',
+    'slug': 'SLUG',
     'geom': 'POLYGON',
 }
 
@@ -28,10 +36,11 @@ def run(verbose=True):
         Region, town_shp, mapping, transform=True, encoding="utf-8")
     lm.save(strict=True, verbose=verbose)
     for feat in ds[0]:
-        rg = Region.objects.get(slug=feat.get('nTOWN'))
+        print(feat.get(mapping['slug']))
+        rg = Region.objects.get(slug__iexact=feat.get(mapping['slug']))
         rg.populate_region()
 
-        rs = RegionSettings.objects.get(region__slug=feat.get('nTOWN'))
+        rs = RegionSettings.objects.get(region__slug__iexact=feat.get(mapping['slug']))
         rs.admins.add(*admins)
         rs.default_language = u'zh'
         rs.save()
