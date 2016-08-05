@@ -7,7 +7,7 @@ from localwiki.regions.models import Region, RegionSettings
 from django.contrib.auth.models import User
 
 town_shp = os.path.join(os.path.dirname(__file__),
-                        'town-SHP/town_103cap_UTF8.shp')
+                        'town-SHP/Town_MOI_1041215_UTF8.shp')
 ds = DataSource(town_shp)
 
 admins = []
@@ -19,13 +19,13 @@ for username in ['pm5', 'superbil', 'dongpo']:
         pass
 
 mapping = {
-    'full_name': 'D_NAME103',
+    'full_name': 'NFULLNAME',
     'slug': 'SLUG',
     'geom': 'POLYGON',
 }
 
 
-def clear(verbose=True):
+def clear_region(slug):
     for i in range(10):
         regions = Region.objects.filter(slug__startswith=unicode(i))
         regions.delete()
