@@ -10,10 +10,10 @@ from django.utils.translation import activate, get_language
 
 activate('zh')
 
-# town_shp = os.path.join(os.path.dirname(__file__),
-                        # 'village-SHP/Village_NLSC_1050219_UTF8.shp')
 town_shp = os.path.join(os.path.dirname(__file__),
-                        'test-SHP/test_village_UTF8.shp')
+                        'village-SHP/Village_NLSC_1050219_UTF8.shp')
+# town_shp = os.path.join(os.path.dirname(__file__),
+                        # 'test-SHP/test_village_UTF8.shp')
 ds = DataSource(town_shp)
 
 admins = []
