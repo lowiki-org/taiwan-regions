@@ -32,13 +32,10 @@ mapping = {
 
 
 def clear_region(region=None, slug=None):
-    if region != None:
-        for page in region.page_set.all():
-            page.delete()
-    elif slug != None:
+    if region == None and slug != None:
         region = Region.objects.get(slug__iexact=slug)
-        for page in region.page_set.all():
-            page.delete()
+    if region != None:
+        region.page_set.all().delete()
     else:
         Page.objects.all().delete()
 
