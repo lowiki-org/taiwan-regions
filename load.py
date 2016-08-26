@@ -46,11 +46,14 @@ def run(verbose=True):
             Region, town_shp, mapping, transform=True, encoding="utf-8")
         lm.save(strict=True, verbose=verbose)
     except:
-        print "There are already regions.  Giving up importing regions."
+        print "Already have regions.  Give up importing regions."
 
     for feat in ds[0]:
-        rg = Region.objects.get(slug__iexact=feat.get(mapping['slug']))
-        rg.populate_region()
+        try:
+            rg = Region.objects.get(slug__iexact=feat.get(mapping['slug']))
+            rg.populate_region()
+        except:
+            print "Alread have pages.  Give up populating this region."
 
         rs = RegionSettings.objects.get(region__slug__iexact=feat.get(mapping['slug']))
         rs.admins.add(*admins)
