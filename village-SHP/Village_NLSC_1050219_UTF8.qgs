@@ -14,10 +14,10 @@
   <mapcanvas>
     <units>degrees</units>
     <extent>
-      <xmin>112.71022226749362005</xmin>
-      <ymin>24.66204862355676042</ymin>
-      <xmax>119.44857074449360823</xmax>
-      <ymax>29.37509798660679294</ymax>
+      <xmin>121.18957259738463961</xmin>
+      <ymin>24.8098174979758177</ymin>
+      <xmax>121.36748278819651148</xmax>
+      <ymax>24.93425444485502496</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -110,6 +110,9 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="FULLNAME">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="SLUG">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="VILLAGE_UID">
@@ -368,6 +371,9 @@
         <edittype widgetv2type="TextEdit" name="FULLNAME">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
+        <edittype widgetv2type="TextEdit" name="SLUG">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
         <edittype widgetv2type="TextEdit" name="VILLAGE_UID">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
@@ -470,10 +476,10 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <featformsuppress>0</featformsuppress>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <editorlayout>generatedlayout</editorlayout>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>

@@ -6,7 +6,7 @@
     <layer-tree-layer expanded="1" checked="Qt::Checked" id="村_里_名稱_UTF_820160825203037751" name="村(里)名稱_UTF-8">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" checked="Qt::Checked" id="Village_NLSC_1050219_UTF820160909130320094" name="Village_NLSC_1050219_UTF8">
+    <layer-tree-layer expanded="1" checked="Qt::Checked" id="Village_NLSC_1050219_UTF820160909133142384" name="Village_NLSC_1050219_UTF8">
       <customproperties/>
     </layer-tree-layer>
   </layer-tree-group>
@@ -14,10 +14,10 @@
   <mapcanvas>
     <units>degrees</units>
     <extent>
-      <xmin>120.23925480330005655</xmin>
-      <ymin>22.48656863835003605</ymin>
-      <xmax>121.04073566670008688</xmax>
-      <ymax>24.84550870365006858</ymax>
+      <xmin>119.90764860029460692</xmin>
+      <ymin>22.66595530023369776</ymin>
+      <xmax>120.26388257699463225</xmax>
+      <ymax>24.08635006413371116</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -35,14 +35,14 @@
     </destinationsrs>
     <layer_coordinate_transform_info>
       <layer_coordinate_transform destAuthId="EPSG:4019" srcAuthId="EPSG:4019" srcDatumTransform="-1" destDatumTransform="-1" layerid="Village_NLSC_1050219_UTF820160821101749593"/>
-      <layer_coordinate_transform destAuthId="EPSG:4019" srcAuthId="EPSG:4019" srcDatumTransform="-1" destDatumTransform="-1" layerid="Village_NLSC_1050219_UTF820160909130320094"/>
+      <layer_coordinate_transform destAuthId="EPSG:4019" srcAuthId="EPSG:4019" srcDatumTransform="-1" destDatumTransform="-1" layerid="Village_NLSC_1050219_UTF820160909133142384"/>
     </layer_coordinate_transform_info>
   </mapcanvas>
   <visibility-presets/>
   <layer-tree-canvas>
     <custom-order enabled="0">
       <item>村_里_名稱_UTF_820160825203037751</item>
-      <item>Village_NLSC_1050219_UTF820160909130320094</item>
+      <item>Village_NLSC_1050219_UTF820160909133142384</item>
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
@@ -53,13 +53,13 @@
     </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Village_NLSC_1050219_UTF8" showFeatureCount="0">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="Village_NLSC_1050219_UTF820160909130320094" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="Village_NLSC_1050219_UTF820160909133142384" visible="1"/>
       </filegroup>
     </legendlayer>
   </legend>
   <projectlayers layercount="2">
     <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-      <id>Village_NLSC_1050219_UTF820160909130320094</id>
+      <id>Village_NLSC_1050219_UTF820160909133142384</id>
       <datasource>./Village_NLSC_1050219_UTF8.shp</datasource>
       <title></title>
       <abstract></abstract>
@@ -111,6 +111,9 @@
         <edittype widgetv2type="TextEdit" name="FULLNAME">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
+        <edittype widgetv2type="TextEdit" name="SLUG">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
         <edittype widgetv2type="TextEdit" name="VILLAGE_UI">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
@@ -150,7 +153,7 @@
           <symbol alpha="1" type="fill" name="0">
             <layer pass="0" class="SimpleFill" locked="0">
               <prop k="border_width_map_unit_scale" v="0,0"/>
-              <prop k="color" v="155,216,165,255"/>
+              <prop k="color" v="142,95,146,255"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0"/>
@@ -225,6 +228,9 @@
         <edittype widgetv2type="TextEdit" name="FULLNAME">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
+        <edittype widgetv2type="TextEdit" name="SLUG">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
         <edittype widgetv2type="TextEdit" name="VILLAGE_UI">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
@@ -283,7 +289,7 @@
       </srs>
       <customproperties/>
       <provider encoding="UTF-8">delimitedtext</provider>
-      <previewExpression>COALESCE("UID", '&lt;NULL>')||', '||COALESCE("PRO_ID", '&lt;NULL>')||', '||COALESCE("COUNTY_ID *", '&lt;NULL>')||', '||COALESCE("TOWN_ID", '&lt;NULL>')||', '||COALESCE("VILLAGE_ID", '&lt;NULL>')||', '||COALESCE("V_Name", '&lt;NULL>')||', '||COALESCE("T_Name", '&lt;NULL>')||', '||COALESCE("C_Name", '&lt;NULL>')||', '||COALESCE("Substitute", '&lt;NULL>')||', '||COALESCE("V_Name_e", '&lt;NULL>')||', '||COALESCE("T_Name_e", '&lt;NULL>')||', '||COALESCE("C_Name_e", '&lt;NULL>')</previewExpression>
+      <previewExpression></previewExpression>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -397,7 +403,7 @@
     <Digitizing>
       <DefaultSnapToleranceUnit type="int">1</DefaultSnapToleranceUnit>
       <LayerSnappingList type="QStringList">
-        <value>Village_NLSC_1050219_UTF820160909130320094</value>
+        <value>Village_NLSC_1050219_UTF820160909133142384</value>
       </LayerSnappingList>
       <LayerSnappingEnabledList type="QStringList">
         <value>enabled</value>

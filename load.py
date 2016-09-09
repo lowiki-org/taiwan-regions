@@ -28,7 +28,7 @@ for username in ['pm5', 'superbil', 'dongpo']:
 
 mapping = {
     'full_name': 'FULLNAME',
-    'slug': 'NVILL',
+    'slug': 'SLUG',
     'geom': 'POLYGON'
 }
 
@@ -51,8 +51,9 @@ def run(verbose=True):
         print "Already have regions.  Give up importing regions."
 
     for feat in ds[0]:
+        print feat.get(mapping['slug'])
+        rg = Region.objects.get(slug__iexact=feat.get(mapping['slug']))
         try:
-            rg = Region.objects.get(slug__startswith=u'tw' + feat.get(mapping['slug']))
             rg.populate_region()
         except:
             print "Alread have pages.  Give up populating this region."
@@ -72,7 +73,7 @@ def run(verbose=True):
         tags.append(tag)
 
         try:
-            fp = Page.objects.get(region=rg, slug__startswith='front')
+            fp = Page.objects.get(region=rg, slug__iexact='front page')
         except:
             fp = Page(region=rg, name='Front Page')
             fp.save()
@@ -87,7 +88,7 @@ def run(verbose=True):
             except:
                 pass
 
-        rs = RegionSettings.objects.get(region__slug__startswith=u'tw' + feat.get(mapping['slug']))
+        rs = RegionSettings.objects.get(region__slug__iexact=feat.get(mapping['slug']))
         rs.admins.add(*admins)
         rs.default_language = u'zh'
         rs.save()
