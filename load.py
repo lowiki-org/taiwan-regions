@@ -14,9 +14,9 @@ activate('zh')
 
 town_shp = os.path.join(os.path.dirname(__file__),
                         'village-SHP/Village_NLSC_1050219_UTF8.shp')
-# town_shp = os.path.join(os.path.dirname(__file__),
-                        # 'test-SHP/test_village_UTF8.shp')
-ds = DataSource(town_shp)
+test_shp = os.path.join(os.path.dirname(__file__),
+                        'test-regions/Village_NLSC_1050219_UTF8.shp')
+ds = None
 
 admins = []
 for username in ['pm5', 'superbil', 'dongpo']:
@@ -42,10 +42,12 @@ def clear_region(region=None, slug=None):
         Page.objects.all().delete()
 
 
-def run(verbose=True):
+def run(dryrun, verbose=False):
+    shp_datasource = test_shp if dryrun else town_shp
+    ds = DataSource(shp_datasource)
     try:
         lm = LayerMapping(
-            Region, town_shp, mapping, transform=True, encoding="utf-8")
+            Region, shp_datasource, mapping, transform=True, encoding="utf-8")
         lm.save(strict=True, verbose=verbose)
     except:
         print "Already have regions.  Give up importing regions."
